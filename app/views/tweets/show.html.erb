@@ -1,0 +1,13 @@
+<p>
+<%= @tweet.message %>    
+</p>
+
+<p>
+<%= (Time.current.to_i - @tweet.tdate.to_i)/60 %>
+分前にツイート
+</p>
+
+<p>
+    <%= image_tag "/get_image/#{@tweet.id}" %>
+</p>
+<p><%= link_to 'トップへ戻る', :back %></p>

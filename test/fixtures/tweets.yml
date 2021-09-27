@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  message: MyString
+  tdate: 2021-09-17 14:37:31
+  figre: 
+
+two:
+  message: MyString
+  tdate: 2021-09-17 14:37:31
+  figre: 

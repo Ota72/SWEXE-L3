@@ -1,0 +1,20 @@
+<% if @tweet.errors.present? %>
+    <h3>
+        エラーがあります
+    </h3>
+    <ul>
+    <% @tweet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @tweet , url: {action: :update} do |f| %>
+    <%= f.label :message, 'ツイート内容' %>
+    <%= f.text_field :message %><br>
+    <%= f.label :file, '写真も貼りますか？（※任意）'  %>
+    <%= f.file_field :file %><br><br>
+    <%= f.submit '更新' %>
+<% end %>
+
+<p><%= link_to 'トップへ戻る', :back %></p>
