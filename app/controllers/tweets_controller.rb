@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(message: params[:tweet][:message], file: file, tdate: Time.current)
     if @tweet.save
       flash[:notice] = '追加しました'
-      redirect_to '/' 
+      redirect_to root_path
     else
       render 'new'
     end
@@ -27,7 +27,7 @@ class TweetsController < ApplicationController
     file = params[:tweet][:file].read
     if @tweet.update(message: params[:tweet][:message], file: file)
       flash[:notice] = '更新しました'
-      redirect_to '/'
+      redirect_to root_path
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class TweetsController < ApplicationController
     tweet = Tweet.find(params[:id])
     tweet.destroy
     flash[:notice] = '削除しました'
-    redirect_to '/'
+    redirect_to root_path
   end
   
   def get_image

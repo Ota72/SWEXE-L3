@@ -9,12 +9,7 @@
     </ul>
 <% end %>
 
-<%= form_for @tweet , url: {action: :create} do |f| %>
-    <%= f.label :message, 'ツイート内容' %>
-    <%= f.text_field :message %><br>
-    <%= f.label :file, '写真も貼りますか？（※任意）'  %>
-    <%= f.file_field :file %><br><br>
-    
-    <%= f.submit 'つぶやく' %>
-<% end %>
+<div id="form">
+  <%= render "form" %>
+</div>
 <p><%= link_to 'トップへ戻る', :back %></p>
